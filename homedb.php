@@ -71,10 +71,24 @@
 	 			<th>Program Studi</th>
 	 			<th>edit/hapus</th>
 	 		</tr>
+		 <?php
+	 		 $no = 1;
+	 		 $tampil = mysqli_query($koneksi, "SELECT * from tmhs order by id_mhs desc");
+	 		while($data = mysqli_fetch_array($tampil)) : 
+
+	 		 ?>
+
+	 		<tr>
+	 			<td><?=$no++;?></td>
+	 			<td><?=$data['nim']?></td>
+	 			<td><?=$data['nama']?></td>
+	 			<td><?=$data['prodi']?></td>
+	 			<td>
 	 				<a href="home.php?hal=edit&id=<?=$data['id_mhs']?>" class="btn btn-warning">Edit</a>
 	 				<a href="home.php?>hal=hapus&id=<?$data['id_mhs']?>" onclick="return confirm('apakah ingin menghapus data?')" class="btn btn-danger">Hapus</a>
 	 			</td>
 	 		</tr>
+			<?php endwhile; ?>
  		</table>
 	<script type="text/javascript" src="js/bootstrap.min.js" ></script>
 </body>
