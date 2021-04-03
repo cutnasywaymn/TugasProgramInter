@@ -4,6 +4,7 @@
 <head>
 	<title> Pendaftaran Beasiswa Fasilkom-TI</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<background img="tugaspi/1.jpg">
 <body>  
 	<div class="container">
 		<h1 class="text-center"> Pendaftaran Beasiswa Fasilkom-TI</h1>
