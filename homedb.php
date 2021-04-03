@@ -44,6 +44,60 @@
 		}else
 		{
 		}
+		//untuk penyimpanan baru
+
+		$simpan  = mysqli_query($koneksi, "INSERT INTO tmhs (nim , nama, alamat, prodi)
+										   VALUES ('$_POST[tnim]' , '$_POST[tnama]' , '$_POST[talamat]' , '$_POST[tprodi]')
+										   ");
+
+		//keterangan penyimpanan
+		if($simpan)
+		{
+			echo "<script>
+					alert('Pendaftaran Berhasil');
+					document.location='home.php';
+				</script>";
+		}
+		else 
+		{
+			echo "<script>
+					alert('Pendaftaran Gagal');
+					document.location='home.php';
+				</script>";
+		}
+		
+	}
+
+    //nguji si button aksi la geng
+    if(isset($_GET['hal']))
+    {
+        //menampilkan sidata yg diedit
+        if($_GET['hal'] == "edit")
+        {
+            $tampil = mysqli_query($koneksi, "SELECT * FROM tmhs WHERE id_mhs = '$_GET[id]'");
+            $data = mysqli_fetch_array($tampil);
+            if($data)
+            {
+                //misalnya nih dapet datanya terus nanti datanya ada di variabel
+             $vnim = $data['nim']; //vnim itu variabel nim ya wakgeng
+             $vnama = $data['nama'];
+             $valamat = $data ['alamat'];
+             $vprodi = $data ['prodi'];
+            }
+        }
+        else if($_GET['hal'] == "hapus")
+        {
+        	//untuk menghapus data
+        	$hapus =mysqli_query($koneksi, "DELETE FROM tmhs WHERE id_mhs = '$_GET[id]");
+        	if($hapus) 
+        	{
+        		echo "<script>
+					alert('Data berhasil dihapus');
+					document.location='home.php';
+				</script>";
+        	}
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
