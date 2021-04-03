@@ -8,6 +8,42 @@
 	$database = "tugass";
 	$koneksi  = mysqli_connect($server, $user , $pass , $database)or die(mysqli_error($koneksi));
 
+//butoon untuk save
+
+	if(isset($_POST['bsimpan']))
+	{
+		//untuk data diedit atau disimpan yang baru geng
+
+		if($_GET['hal'] == "edit")
+		{
+			//untuk edit
+
+			$edit  = mysqli_query($koneksi, "UPDATE tmhs set 
+						nim = '$_POST[tnim]',
+						nama = '$_POST[tnama]',
+						alamat = '$_POST[talamat]',
+						prodi  = '$_POST[tprodi]'
+						WHERE id_mhs = '$_GET[id]' ");
+
+		
+		if($edit)
+		{
+			echo "<script>
+					alert('Edit Berhasil');
+					document.location='home.php';
+				</script>";
+		}
+		else 
+		{
+			echo "<script>
+					alert('Edit Gagal');
+					document.location='home.php';
+				</script>";
+		}
+
+		}else
+		{
+		}
 ?>
 <!DOCTYPE html>
 <html>
