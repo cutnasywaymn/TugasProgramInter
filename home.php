@@ -62,7 +62,7 @@
 	 				<a href="#" class="btn btn-warning">Edit</a>
 	 				<a href="#" onclick="return confirm('apakah ingin menghapus data?')" class="btn btn-danger">Hapus</a>
 	 			</td>
-	 		</tr>
+	 		
  		</table>
 </body>
 </html>
