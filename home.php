@@ -37,11 +37,32 @@
                   <option value="SI-TI">Teknologi Informasi</option>
                         </select>
                     </div>
-                </div>
+                <div class="card-body">
+             <button type="submit" class="btn btn-success" name="bsimpan">Simpan</button>
+			<button type="submit" class="btn btn-danger" name="breset">Reset</button>
          </div>
      </div>
     </form>
   </div>
 </div>
+	<!-- form daftara -->
+<div class="card mt-5">
+  <div class="card-header bg-success text-white">
+    	Daftar mahasiswa Yang Mendaftar
+	  </div>
+ <div class="card-body">
+ 		<table class="table table-bordered table-strip">
+ 			<tr>
+	 			<th>No.</th>
+	 			<th>NIM</th>
+	 			<th>Nama Lengkap</th>
+	 			<th>Program Studi</th>
+	 			<th>edit/hapus</th>
+	 		</tr>
+	 				<a href="#" class="btn btn-warning">Edit</a>
+	 				<a href="#" onclick="return confirm('apakah ingin menghapus data?')" class="btn btn-danger">Hapus</a>
+	 			</td>
+	 		</tr>
+ 		</table>
 </body>
 </html>
